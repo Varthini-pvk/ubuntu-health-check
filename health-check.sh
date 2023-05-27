@@ -39,23 +39,6 @@ if (( $(echo "$disk_usage > $THRESHOLD_DISK" |bc -l) )); then
   checks_passed=false
 fi
 
-# Check status of Bitnami services
-services_status=$(sudo $BITNAMI_STATUS_SCRIPT status)
-
-echo "Service Status: $services_status"
-
-# if echo $services_status | grep -q "not running"; then
-#   echo "One or more Bitnami services are not running: $services_status" | \
-#   mail -s "Bitnami service status alert" $EMAIL
-#   checks_passed=false
-# fi
-
-# # Check MySQL status
-# if ! mysqladmin -h $DB_HOSTNAME -P $DB_PORT -u $DB_USERNAME -p$DB_PASSWORD status > /dev/null; then
-#   echo "MySQL is not running" | \
-#   mail -s "MySQL is down alert" $EMAIL
-#   checks_passed=false
-# fi
 
 # If all checks passed, run the tests
 if $checks_passed; then
