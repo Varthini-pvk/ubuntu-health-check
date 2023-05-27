@@ -47,4 +47,3 @@ else
   echo "Some checks did not pass"
 fi
 
-EOF
