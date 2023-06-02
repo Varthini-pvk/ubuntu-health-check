@@ -40,7 +40,7 @@ if (( $(echo "$disk_usage > $THRESHOLD_DISK" |bc -l) )); then
 fi
 
 # Check status of Bitnami services
-services_status=$(sudo $BITNAMI_STATUS_SCRIPT status)
+# services_status=$(sudo $BITNAMI_STATUS_SCRIPT status)
 
 echo "Service Status: $services_status"
 
